@@ -10,7 +10,7 @@ commonLabels:
   app: dummy-app
   version: v1.0.0
 
-namespace: default
+namespace: dummy
 
 images:
   - name: dummy-app
