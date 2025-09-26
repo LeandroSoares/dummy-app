@@ -8,9 +8,19 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  ingressClassName: nginx
   rules:
   - host: dummy-app.local
     http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dummy-app-service
+            port:
+              number: 80
+  - http:
       paths:
       - path: /
         pathType: Prefix
